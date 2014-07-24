@@ -2,3 +2,49 @@ body {
   background: #eee;
   font-family: "Lucida Console", monospace;
 }
+
+td {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bbb;
+  text-align: center;
+}
+
+#sq-0 {
+  border-top: none;
+  border-left: none;
+}
+
+#sq-1 {
+  border-top: none;
+}
+
+#sq-2 {
+  border-top: none;
+  border-right: none;
+}
+
+#sq-3 {
+  border-left: none;
+}
+
+#sq-4 {
+}
+
+#sq-5 {
+  border-right: none;
+}
+
+#sq-6 {
+  border-bottom: none;
+  border-left: none;
+}
+
+#sq-7 {
+  border-bottom: none;
+}
+
+#sq-8 {
+  border-bottom: none;
+  border-right:none;
+}
