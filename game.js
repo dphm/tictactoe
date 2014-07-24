@@ -1,5 +1,5 @@
 function Game() {
-  return ['X', ' ', ' ',
+  return [' ', ' ', ' ',
           ' ', ' ', ' ',
           ' ', ' ', ' '];
 }
