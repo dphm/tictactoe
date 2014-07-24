@@ -4,17 +4,17 @@ block content
   h1= "Game " + id
   table
     tr
-      td(id="sq-0") _
-      td(id="sq-1") _
-      td(id="sq-2") _
+      td(id="sq-0")= game[0]
+      td(id="sq-1")= game[1]
+      td(id="sq-2")= game[2]
     tr
-      td(id="sq-3") _
-      td(id="sq-4") _
-      td(id="sq-5") _
+      td(id="sq-3")= game[3]
+      td(id="sq-4")= game[4]
+      td(id="sq-5")= game[5]
     tr
-      td(id="sq-6") _
-      td(id="sq-7") _
-      td(id="sq-8") _
+      td(id="sq-6")= game[6]
+      td(id="sq-7")= game[7]
+      td(id="sq-8")= game[8]
   script.
     var squares = ['sq-0', 'sq-1', 'sq-2',
                    'sq-3', 'sq-4', 'sq-5',

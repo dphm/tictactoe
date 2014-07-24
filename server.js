@@ -5,6 +5,9 @@ var io      = require('socket.io').listen(http);
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 
+var Game = require('./game');
+var games = {};
+
 /**
  * Express routes
  */
@@ -20,8 +23,17 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
+app.get('/new/:id', function(req, res) {
+  var id = req.params.id;
+  games[id] = new Game();
+  res.redirect('/g/' + id);
+});
+
 app.get('/g/:id', function(req, res) {
-  res.render('game', { id: req.params.id });
+  var id = req.params.id;
+  var game = games[id];
+  if (game) res.render('game', { id: id, game: games[id] });
+  else res.send('Game not found');
 });
 
 http.listen(3000, function() {
