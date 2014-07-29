@@ -5,7 +5,8 @@ var io      = require('socket.io').listen(http);
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 
-var Game = require('./game');
+var gameLib = require('./game');
+var Game = gameLib.Game;
 var games = {};
 
 /**
