@@ -15,13 +15,3 @@ block content
       td(id="sq-6")= game[6]
       td(id="sq-7")= game[7]
       td(id="sq-8")= game[8]
-  script.
-    var squares = ['sq-0', 'sq-1', 'sq-2',
-                   'sq-3', 'sq-4', 'sq-5',
-                   'sq-6', 'sq-7', 'sq-8'];
-    squares.forEach(function(square) {
-      var s = document.getElementById(square);
-      s.addEventListener('click', function() {
-        console.log('Clicked', square);
-      });
-    });
