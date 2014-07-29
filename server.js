@@ -1,3 +1,4 @@
+var path    = require('path');
 var express = require('express');
 var app     = express();
 var http    = require('http').Server(app);
@@ -48,6 +49,14 @@ http.listen(3000, function() {
 io.on('connection', function(socket) {
   console.log(socket.id + ' connected');
   io.emit('message', { text: 'Hello, ' + socket.id });
+
+  socket.on('click', function(data) {
+    var id = path.basename(data.game);
+    console.log(socket.id + ' clicked ' + data.position);
+    gameLib.play(games[id], data.piece, data.position);
+    socket.emit('played', { game: games[id], last: data.piece });
+  });
+
   socket.on('disconnect', function() {
     console.log(socket.id + ' disconnected');
   });
